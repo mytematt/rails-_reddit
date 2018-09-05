@@ -10,6 +10,7 @@ class SubsController < ApplicationController
 
   def new
     @subs = Sub.new
+    render partial: 'form'
   end
 
   def create
@@ -22,6 +23,7 @@ class SubsController < ApplicationController
   end
 
   def edit
+    render partial: "form"
   end
 
   def update
