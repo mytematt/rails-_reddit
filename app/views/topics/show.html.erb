@@ -1,2 +1,13 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<h1><%= @subs.name %> - <%=@topics.name %> </h1>
+<p> <%= @topics.body %>
+<h2>Comments</h2>
+
+<% @topics.comments.each do |comment| %>
+<%= render 'comments/comment', {comment: comment} %>
+<% end %>
+
+<hr/>
+<%= link_to 'Add Comment', new_topic_comment_path(@topics) %>
+<%= link_to 'Edit Topic', edit_sub_topic_path[@subs.id, @topics.id] %>
+<%= link_to 'Delete Topic', [@subs, @topics], method: :delete %>
+<%= link_to 'Back TO Topics', sub_topics_path(@subs) %>

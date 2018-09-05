@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topics = @subs.topic.new(topic_params)
+    @topics = @subs.topics.new(topic_params)
     if @topics.save
       redirect_to [@subs, @topics]
     else

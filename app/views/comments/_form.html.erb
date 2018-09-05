@@ -1,0 +1,10 @@
+<h1>Create new comment</h1>
+<hr/>
+<%= form_for [@topics, @comments] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, required: true, autofocus: true %>
+  <br/>
+  <%= f.label :author %>
+  <%= f.text_field :author, required: true %>
+  <%= f.submit %>
+  <% end %>
